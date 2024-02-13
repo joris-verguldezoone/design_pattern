@@ -1,0 +1,2 @@
+Le design pattern builder s'utilise pour former un objet complexe en plusieurs étapes à l'aide de plus petit objet. 
+Par exemple pour fournir un objet historique d'achat et le sauvegarder en BDD il nous faudrait un objet USER, USER_INFO(adresse), PRODUIT

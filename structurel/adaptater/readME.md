@@ -1,0 +1,5 @@
+permettre à des classes incompatibles de travailler ensemble en fournissant une interface commune
+
+Lorsqu'un ensemble de classes ne s'utilise pas de la même manière et qu'il est nécessaire de les rendre compatibles, une classe adaptateur peut être créée. Cette classe adaptateur implémente une interface commune que toutes les classes doivent respecter. Lors de l'instanciation de la classe adaptateur, ses fonctionnalités d'adaptation sont utilisées pour uniformiser l'utilisation des différentes classes. Ainsi, il n'est pas nécessaire de modifier la logique spécifique des classes existantes, mais simplement de créer une interface commune via l'adaptateur.
+
+Cela permet une meilleure flexibilité et extensibilité dans le code, car de nouvelles classes peuvent être ajoutées sans changer la logique existante, tant qu'elles respectent l'interface commune attendue par l'adaptateur.
