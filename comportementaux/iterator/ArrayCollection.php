@@ -1,7 +1,8 @@
 <?php 
 
-require_once('./ArrayIterator.php');
+require_once('./IteratorManager.php');
 
+// Celui qui va posséder la liste d'objet
 class ArrayCollection implements IteratorAggregate
 {
     private $items = [];
@@ -14,6 +15,6 @@ class ArrayCollection implements IteratorAggregate
     // Méthode pour récupérer un itérateur
     public function getIterator(): Traversable
     {
-        return new Toto($this->items);
+        return new IteratorManager($this->items);
     }
 }

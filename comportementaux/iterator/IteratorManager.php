@@ -1,7 +1,7 @@
 <?php 
 
 
-class Toto implements Iterator
+class IteratorManager implements Iterator
 {
     private $items;
     private $index = 0;
