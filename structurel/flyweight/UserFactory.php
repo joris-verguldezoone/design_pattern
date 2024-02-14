@@ -1,8 +1,11 @@
 <?php
+require_once('./UserFlyweight.php');
+require_once('./User.php');
+
 class UserFactory {
     private $flyweights = [];
 
-    public function createCompleteUser($commentId, $text, $postId, $userId, $role) {
+    public function createCompleteUser($userId, $text, $postId,$commentId , $role) {
         foreach ($this->flyweights as $key => $flyweight) {
             // Vérifier si un objet léger existant peut être réutilisé
             if ($postId === $flyweight->postId && $userId === $flyweight->userId && $role === $flyweight->role) {
@@ -19,11 +22,24 @@ class UserFactory {
 
         return $completeUser;
     }
+
+    /**
+     * Get the value of flyweights
+     */ 
+    public function getFlyweights()
+    {
+        return $this->flyweights;
+    }
+
+    /**
+     * Set the value of flyweights
+     *
+     * @return  self
+     */ 
+    public function setFlyweights($flyweights)
+    {
+        $this->flyweights = $flyweights;
+
+        return $this;
+    }
 }
-
-// Utilisation de la factory
-$userFactory = new UserFactory();
-
-// Création des objets complets et légers en même temps
-$user1 = $userFactory->createCompleteUser(1, "First comment", 123, 456, "Member");
-$user2 = $userFactory->createCompleteUser(2, "Second comment", 123, 789, "Admin");

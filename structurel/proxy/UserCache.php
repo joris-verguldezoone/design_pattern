@@ -1,10 +1,11 @@
 <?php
 
-require_once('IUserCache');
+require_once('./IUserCache.php');
 
 class UserCache implements IUserCache {
     private $user;
     private $cacheFilePath;
+    private $userId;
 
     public function __construct($userId) {
         $this->user = new User($userId);
@@ -21,5 +22,25 @@ class UserCache implements IUserCache {
             file_put_contents($this->cacheFilePath, $userData);
             return $userData;
         }
+    }
+
+    /**
+     * Get the value of userId
+     */ 
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set the value of userId
+     *
+     * @return  self
+     */ 
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
     }
 }

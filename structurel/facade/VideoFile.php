@@ -8,6 +8,6 @@ class VideoFile {
     }
 
     public function save() {
-        echo "Saved Video File: " . $this->filename . PHP_EOL;
+        echo "Saved Video File: " . $this->filename;
     }
 }
